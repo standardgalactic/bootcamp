@@ -27,8 +27,9 @@ This repository documents practical coursework and projects completed across ten
 
 ## Tutorials
 
-- `tutorials/racket-circles-of-evaluation.md` — introduction to reading and evaluating nested Racket expressions
-- `tutorials/haskell-intro.md` — beginner-focused Haskell syntax and functional patterns
+- `tutorials/circles-of-evaluation-series.md` — paired Racket/Haskell proposition-driven tutorial roadmap
+- `tutorials/racket-circles-of-evaluation.md` — Racket continuation and evaluation-context experiments
+- `tutorials/haskell-intro.md` — Haskell refusal, demand, and representable continuation experiments
 
 ## Representative project examples
 

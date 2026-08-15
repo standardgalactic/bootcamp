@@ -1,67 +1,54 @@
-# Racket Tutorial: Circles of Evaluation
+# Racket Track: Circles of Evaluation Experiments
 
-## What are circles of evaluation?
+This track treats continuation as a first-class object of investigation.
 
-A circle of evaluation is a visual way to represent how a Racket expression is evaluated.
+## Orientation
 
-Each circle contains:
-- an operator (the function)
-- its arguments (the input values or nested expressions)
+In Racket, an expression can be described as:
+- current reducible expression
+- continuation (the surrounding context waiting for a value)
 
-The center idea: evaluate inner expressions first, then apply the outer function.
-
-## Example 1: Simple expression
-
-Expression:
+Example decomposition:
 
 ```racket
-(+ 3 4)
+(- 4 (+ 1 1))
 ```
 
-Circle interpretation:
-- operator: `+`
-- arguments: `3`, `4`
-- result: `7`
+Current reducible expression: `(+ 1 1)`
+Continuation context: `(- 4 [])`
 
-## Example 2: Nested expressions
+## Experiment sequence
 
-Expression:
+### 1) Observation inside evaluation
 
-```racket
-(* (+ 1 2) (- 10 4))
-```
+File: `tutorials/racket/01-observe-continuation.rkt`
 
-Step-by-step:
-1. Evaluate `(+ 1 2)` → `3`
-2. Evaluate `(- 10 4)` → `6`
-3. Evaluate `(* 3 6)` → `18`
+Question: At each observation, what information exists and what continuation is waiting?
 
-Circle structure:
-- outer circle: `*`
-- left inner circle: `+` with `1` and `2`
-- right inner circle: `-` with `10` and `4`
+### 2) Proposal vs admission
 
-## Why this helps
+File: `tutorials/racket/02-proposal-admission.rkt`
 
-Circles of evaluation make it easier to:
-- read prefix notation
-- understand nesting and order of operations
-- debug expressions by isolating each subexpression
+Key distinction:
 
-## Practice prompts
+Produced(proposal) does not imply Admitted(value).
 
-Try drawing circles for:
+### 3) Preserve contradiction as history
 
-```racket
-(+ (* 2 5) (/ 12 3))
-```
+File: `tutorials/racket/03-preserve-history.rkt`
 
-```racket
-(- (max 8 3) (min 4 2))
-```
+Rule: do not overwrite old observations to enforce consistency.
+Contradiction is preserved, then interpreted.
 
-For each one:
-1. identify the outer operator
-2. identify inner expressions
-3. reduce inner expressions first
-4. compute the final value
+### 4) Scoped futures with delimited continuation
+
+File: `tutorials/racket/04-delimited-fork.rkt`
+
+Use `reset`/`shift` to capture a bounded continuation and explore branches.
+
+## Suggested progression
+
+1. Run each file.
+2. Record the proposition each output confirms.
+3. Rewrite one experiment to change interpretation while preserving history.
+4. Fork one continuation and keep both branches visible.

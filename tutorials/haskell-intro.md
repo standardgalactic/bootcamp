@@ -1,72 +1,41 @@
-# Haskell Tutorial: Intro Basics
+# Haskell Track: Selective Continuation by Types and Demand
 
-## What is Haskell?
+This track is the complement to the Racket continuation experiments.
 
-Haskell is a statically typed, purely functional programming language.
+- Racket emphasizes executable continuation mechanics.
+- Haskell emphasizes what continuations and outcomes are representable by type and by demand.
 
-Core ideas:
-- functions are first-class
-- immutability by default
-- strong type system with type inference
+## Experiment sequence
 
-## Quick syntax examples
+### 1) Refusal is a value
 
-### Values and functions
+File: `tutorials/haskell/01-claim-judgment.hs`
 
-```haskell
-x :: Int
-x = 5
+A claim can become accepted or refused; refusal is not an exceptional side channel.
 
-square :: Int -> Int
-square n = n * n
-```
+### 2) Availability is not use
 
-### Function application
+File: `tutorials/haskell/02-availability-not-use.hs`
 
-In Haskell, function application uses spaces:
+Non-strict evaluation demonstrates that supplied arguments do not need to be evaluated unless demanded.
 
-```haskell
-square 4    -- 16
-```
+### 3) Admissible worlds shrink
 
-### Lists
+File: `tutorials/haskell/03-admissible-worlds.hs`
 
-```haskell
-nums :: [Int]
-nums = [1,2,3,4]
+Invariant expressed as code:
 
-doubled = map (*2) nums      -- [2,4,6,8]
-small = filter (<3) nums     -- [1,2]
-```
+A(t+1) subset-of A(t)
 
-### Pattern matching
+### 4) Prediction survives observation
 
-```haskell
-describe :: [a] -> String
-describe [] = "empty"
-describe [_] = "one element"
-describe _ = "many elements"
-```
+File: `tutorials/haskell/04-prediction-before-observation.hs`
 
-## Working in GHCi
+Observation resolves an experiment without mutating away the prior prediction.
 
-Typical loop:
-1. open `ghci`
-2. load a file with `:load FileName.hs`
-3. run function calls interactively
-4. iterate quickly on small pure functions
+## Suggested progression
 
-## Beginner checklist
-
-- write explicit type signatures for top-level functions
-- prefer pure functions first
-- break problems into small composable functions
-- use `map`, `filter`, and `foldr` for list transformations
-
-## Practice prompts
-
-Implement and test:
-
-1. `sumSquares` for a list of integers
-2. `isPalindrome` for a string
-3. `countEven` for a list of integers
+1. Run each file with `runghc`.
+2. Identify which proposition each type and output enforces.
+3. Extend one experiment with an additional refusal/contradiction constructor.
+4. Keep prediction and observation side-by-side instead of replacing one with the other.
