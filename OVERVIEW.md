@@ -8,6 +8,7 @@ This repository documents practical coursework and projects completed across ten
 
 - `week-01` to `week-10` — weekly exercises and projects
 - `student_presentations` — slide decks and sample files used for presentations
+- `tutorials` — focused topic tutorials and learning references
 - `README.md` — primary repository entry point
 - `morze.py` — standalone Morse conversion example script
 
@@ -23,6 +24,11 @@ This repository documents practical coursework and projects completed across ten
 - **Week 08:** TDD exercises, async programming, frontend apps
 - **Week 09:** full-stack todo app with API and database
 - **Week 10:** JavaScript pattern exercises and project continuation
+
+## Tutorials
+
+- `tutorials/racket-circles-of-evaluation.md` — introduction to reading and evaluating nested Racket expressions
+- `tutorials/haskell-intro.md` — beginner-focused Haskell syntax and functional patterns
 
 ## Representative project examples
 
