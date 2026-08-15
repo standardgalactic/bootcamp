@@ -30,6 +30,7 @@ This repository documents practical coursework and projects completed across ten
 - `tutorials/circles-of-evaluation-series.md` — paired Racket/Haskell proposition-driven tutorial roadmap
 - `tutorials/racket-circles-of-evaluation.md` — Racket continuation and evaluation-context experiments
 - `tutorials/haskell-intro.md` — Haskell refusal, demand, and representable continuation experiments
+- `tutorials/epistemic-immutability.tex` — long-form essay on provenance, witness layers, and selective continuation
 
 ## Representative project examples
 

@@ -22,5 +22,6 @@ Bootcamp is a week-by-week learning repository with exercises and small projects
 - [Circles of Evaluation: Racket and Haskell Experiments in Selective Continuation](./tutorials/circles-of-evaluation-series.md)
 - [Racket Track: Circles of Evaluation Experiments](./tutorials/racket-circles-of-evaluation.md)
 - [Haskell Track: Selective Continuation by Types and Demand](./tutorials/haskell-intro.md)
+- [Epistemic Immutability (LaTeX essay)](./tutorials/epistemic-immutability.tex)
 
 For a fuller structure map, see [`OVERVIEW.md`](./OVERVIEW.md).
